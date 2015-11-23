@@ -1,0 +1,8 @@
+﻿.notice-description{
+    background-color: transparent;
+    border: none;
+    font-size: 13px;
+    word-break: normal;
+    font-family: Helvetica Neue !important;
+    white-space: pre-wrap;
+}

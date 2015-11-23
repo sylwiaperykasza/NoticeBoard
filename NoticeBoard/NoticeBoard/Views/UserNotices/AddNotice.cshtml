@@ -1,0 +1,48 @@
+﻿@model NoticeBoard.Models.ViewModels.NewNoticeViewModel
+
+@{
+    ViewBag.Title = "AddNotice";
+}
+
+<h2>AddNotice</h2>
+
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Tytuł</label>
+        <input type="email" class="form-control" placeholder="Tytuł">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Opis</label>
+        <input type="email" class="form-control" placeholder="Opis">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Kwota</label>
+        <input type="email" class="form-control" placeholder="Kwota">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Ważne przez</label>
+        <select class="form-control">
+            <option>3</option>
+            <option>5</option>
+            <option>7</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Kategoria</label>
+        @*@Html.DropDownListFor(model => model.CategoryList, Model.Category, new { @class = "form-control" })*@
+        <select class="form-control">
+            <option>3</option>
+            <option>5</option>
+            <option>7</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Miejscowość</label>
+        <select class="form-control">
+            <option>3</option>
+            <option>5</option>
+            <option>7</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-default">Dodaj</button>
+</form>

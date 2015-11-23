@@ -81,6 +81,6 @@ C:\studia\IX semestr\Aplikacje internetowe\NoticeBoard\NoticeBoard\bin\ko\System
 C:\studia\IX semestr\Aplikacje internetowe\NoticeBoard\NoticeBoard\bin\ru\System.Spatial.resources.dll
 C:\studia\IX semestr\Aplikacje internetowe\NoticeBoard\NoticeBoard\bin\zh-Hans\System.Spatial.resources.dll
 C:\studia\IX semestr\Aplikacje internetowe\NoticeBoard\NoticeBoard\bin\zh-Hant\System.Spatial.resources.dll
-C:\studia\IX semestr\Aplikacje internetowe\NoticeBoard\NoticeBoard\obj\Debug\NoticeBoard.csprojResolveAssemblyReference.cache
 C:\studia\IX semestr\Aplikacje internetowe\NoticeBoard\NoticeBoard\obj\Debug\NoticeBoard.dll
 C:\studia\IX semestr\Aplikacje internetowe\NoticeBoard\NoticeBoard\obj\Debug\NoticeBoard.pdb
+C:\studia\IX semestr\Aplikacje internetowe\NoticeBoard\NoticeBoard\obj\Debug\NoticeBoard.csprojResolveAssemblyReference.cache

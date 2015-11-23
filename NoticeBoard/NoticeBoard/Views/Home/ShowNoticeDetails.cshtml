@@ -1,0 +1,48 @@
+﻿@model NoticeBoard.Models.ViewModels.NoticeDetailsViewModel
+@{
+    ViewBag.Title = "Szczegóły ogłoszenia";
+}
+<div class="row">
+    <div class="col-sm-4">
+        @foreach (var category in Model.CategoriesList)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">@category.Name</div>
+                <div class="panel-body">
+                    <ul>
+                        @foreach (var subCategory in category.SubCategory)
+                        {
+                            <li>
+                                @if (subCategory.Id != Model.SelectedCategoryId)
+                                {
+                                    <a href="@Url.Action("Index", "Home", new { categoryId = subCategory.Id })">
+                                        @subCategory.Name
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Action("Index", "Home", new { categoryId = subCategory.Id })" style="color: green; font-weight: bold">
+                                        @subCategory.Name
+                                    </a>
+                                }
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+
+    </div>
+    <div class="col-sm-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">@Model.Notice.Title <span style="float: right;"> data dodania: @Model.Notice.CreateDate</span></div>
+            <div class="panel-body">
+                Miejscowość: @Model.Notice.Place <br />
+                <pre class="notice-description"> 
+                @Model.Notice.Description
+</pre>
+            </div>
+        </div>
+    </div>
+</div>
