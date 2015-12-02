@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Web.WebPages.OAuth;
 using NoticeBoard.Models;
+using WebMatrix.WebData;
 
 namespace NoticeBoard
 {
@@ -27,6 +28,10 @@ namespace NoticeBoard
             //    appSecret: "");
 
             //OAuthWebSecurity.RegisterGoogleClient();
+
+            if (!WebSecurity.Initialized)
+                WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                
         }
     }
 }

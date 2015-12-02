@@ -1,5 +1,25 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@model List<NoticeBoard.Models.RepositoryModels.NoticeRepo>
+@{
+    ViewBag.Title = "Twoje ogłoszenia";
 }
 
-<h2>moje ogłoszenia</h2>
+<h2>Twoje ogłoszenia</h2>
+
+<div class="col-sm-12">
+
+    @foreach (var notice in Model)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading">@notice.Title <span style="float: right;"> data dodania: @notice.CreateDate</span></div>
+            <div class="panel-body">
+                @notice.Description
+                <b>Edytuj</b>
+
+            </div>
+        </div>
+    }
+
+
+
+</div>
+

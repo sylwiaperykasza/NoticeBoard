@@ -38,7 +38,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">@Model.Notice.Title <span style="float: right;"> data dodania: @Model.Notice.CreateDate</span></div>
             <div class="panel-body">
-                Miejscowość: @Model.Notice.Place <br />
+                Miejscowość: @Model.Notice.Place<br />
+                Cena: @Model.Notice.Amount PLN <br />
+                Ważne do: @Model.Notice.ExprireDate <br />
+                Kategoria: @Model.Notice.CategoryName <br />
                 <pre class="notice-description"> 
                 @Model.Notice.Description
 </pre>

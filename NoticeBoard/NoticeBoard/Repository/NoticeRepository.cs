@@ -1,4 +1,5 @@
 ﻿using NoticeBoard.Models;
+using NoticeBoard.Models.DbModels;
 using NoticeBoard.Models.RepositoryModels;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace NoticeBoard.Repository
                 {
                     Amount = x.Amount,
                     CreateDate = x.CreateDate,
-                    Description = x.Description.Substring(0, 250),
+                    Description = x.Description.Length > 250 ? x.Description.Substring(0, 250) : x.Description,
                     ExprireDate = x.ExprireDate,
                     Id = x.Id,
                     Title = x.Title
@@ -60,7 +61,7 @@ namespace NoticeBoard.Repository
                 {
                     Amount = x.Amount,
                     CreateDate = x.CreateDate,
-                    Description = x.Description.Substring(0,250),
+                    Description = x.Description.Length > 250 ? x.Description.Substring(0, 250) : x.Description,
                     ExprireDate = x.ExprireDate,
                     Id = x.Id,
                     Title = x.Title
@@ -83,10 +84,19 @@ namespace NoticeBoard.Repository
                     ExprireDate = notice.ExprireDate,
                     Id = notice.Id,
                     Title = notice.Title,
-                    Place = notice.NoticePlace.City
+                    Place = notice.NoticePlace.City,
+                    CategoryName = notice.Category.Name
                 };
 
                 return result;
+            }
+        }
+        public void AddNewNotice(NoticeEntity notice)
+        {
+            using (var context = new UsersContext())
+            {
+                context.Notices.Add(notice);
+                context.SaveChanges();
             }
         }
     }
