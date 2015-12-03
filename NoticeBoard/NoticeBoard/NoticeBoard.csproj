@@ -337,6 +337,10 @@
     <Content Include="Views\UserNotices\AddNotice.cshtml" />
     <Content Include="Views\Home\ShowNoticeDetails.cshtml" />
     <Content Include="Views\UserNotices\AddNoticeToDatabase.cshtml" />
+    <Content Include="Views\UserNotices\_test.cshtml" />
+    <Content Include="Views\UserNotices\EditNotice.cshtml" />
+    <Content Include="Views\UserNotices\_NoticeForm.cshtml" />
+    <Content Include="Views\UserNotices\UpdateNotice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

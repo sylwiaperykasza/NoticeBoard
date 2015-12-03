@@ -1,0 +1,36 @@
+﻿@model NoticeBoard.Models.ViewModels.NewNoticeViewModel
+@Html.HiddenFor(model => model.Id)
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Tytuł</label>
+    @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Tytuł" })
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">Opis</label>
+    @Html.EditorFor(x => x.Description, new { @class = "form-control add-notice-textarea", placeholder = "Opis" })
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">Kwota</label>
+    @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", placeholder = "Kwota" })
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">Ważne przez</label>
+    @{
+        var expireToList = new List<System.Web.UI.WebControls.ListItem> {
+                new System.Web.UI.WebControls.ListItem { Text = "3", Value = "3" },
+                new System.Web.UI.WebControls.ListItem { Text = "5", Value = "5" },
+                new System.Web.UI.WebControls.ListItem { Text = "7", Value = "7" },
+            };
+    }
+    @Html.DropDownListFor(model => model.ExpireTo, new SelectList(expireToList), new { @class = "form-control" })
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">Kategoria</label>
+    @Html.DropDownListFor(model => Model.SelectedCategoryId, Model.CategoryList, new { @class = "form-control" })
+
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">Miejscowość</label>
+    @Html.DropDownListFor(model => Model.NoticePlaceId, Model.NoticePlaceList, new { @class = "form-control" })
+</div>
+<button type="submit" class="btn btn-default">Dodaj</button>

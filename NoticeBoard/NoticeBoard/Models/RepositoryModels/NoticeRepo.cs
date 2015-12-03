@@ -14,6 +14,8 @@ namespace NoticeBoard.Models.RepositoryModels
         public decimal Amount { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime ExprireDate { get; set; }
+        public int CategoryId { get; set; }
+        public int NoticePlaceId { get; set; }
         public string CategoryName { get; set; }
     }
 }

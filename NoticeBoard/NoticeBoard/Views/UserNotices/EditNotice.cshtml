@@ -1,0 +1,14 @@
+﻿@model NoticeBoard.Models.ViewModels.NewNoticeViewModel
+
+@{
+    ViewBag.Title = "EditNotice";
+}
+
+<h2>EditNotice</h2>
+
+
+@using (Html.BeginForm("UpdateNotice", "UserNotices"))
+{
+    @Html.Partial("_NoticeForm")
+}
+

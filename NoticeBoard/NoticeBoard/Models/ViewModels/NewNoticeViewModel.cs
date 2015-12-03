@@ -23,5 +23,6 @@ namespace NoticeBoard.Models.ViewModels
         public IEnumerable<SelectListItem> CategoryList { get; set; }
         public string NoticePlaceId { get; set; }
         public IEnumerable<SelectListItem> NoticePlaceList { get; set; }
+        public int Id { get; set; }
     }
 }

@@ -13,12 +13,14 @@
             <div class="panel-heading">@notice.Title <span style="float: right;"> data dodania: @notice.CreateDate</span></div>
             <div class="panel-body">
                 @notice.Description
-                <b>Edytuj</b>
-
-            </div>
+                
+                <a href="@Url.Action("EditNotice", "UserNotices", new { noticeId = notice.Id }) ">
+                    <b>Edytuj</b>
+                </a>
+</div>
         </div>
     }
-
+    @Html.Partial("_test")
 
 
 </div>

@@ -85,7 +85,9 @@ namespace NoticeBoard.Repository
                     Id = notice.Id,
                     Title = notice.Title,
                     Place = notice.NoticePlace.City,
-                    CategoryName = notice.Category.Name
+                    CategoryName = notice.Category.Name,
+                    CategoryId = notice.CategoryId,
+                    NoticePlaceId = notice.NoticePlaceId
                 };
 
                 return result;
@@ -96,6 +98,20 @@ namespace NoticeBoard.Repository
             using (var context = new UsersContext())
             {
                 context.Notices.Add(notice);
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateNotice(NoticeEntity noticeToUpdate)
+        {
+            using (var context = new UsersContext())
+            {
+                var notice = context.Notices.FirstOrDefault(x => x.Id == noticeToUpdate.Id);
+                notice.Amount = noticeToUpdate.Amount;
+                notice.CategoryId = noticeToUpdate.CategoryId;
+                notice.Description = noticeToUpdate.Description;
+                notice.NoticePlaceId = noticeToUpdate.NoticePlaceId;
+                notice.Title = noticeToUpdate.Title;
                 context.SaveChanges();
             }
         }
